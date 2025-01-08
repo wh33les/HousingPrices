@@ -1,7 +1,7 @@
 # %%
 import numpy as np
 import torch
-import torch.nn as nn
+from torch import nn
 
 class RegressionNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
@@ -9,7 +9,7 @@ class RegressionNN(nn.Module):
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.lrelu = nn.LeakyReLU()#nn.ReLU()
         self.fc2 = nn.Linear(hidden_size, output_size)
-        self.optimizer = torch.optim.SGD(self.parameters(), lr=1e-6)
+        self.optimizer = torch.optim.Adam(params=self.parameters(), lr=1e-4)#SGD(self.parameters(), lr=1e-6)
 
     def forward(self, x):
         x = self.lrelu(self.fc1(x))
@@ -34,9 +34,9 @@ class RegressionNN(nn.Module):
 
             y_pred = self(X_train)#.forward(X_train)
             loss = criterion(y_pred, y_train) 
-            if epoch % 1000 == 0: 
-                print(f"y_pred at epoch {epoch}: {y_pred}")
-                print(f"loss at epoch {epoch}: {loss}")
+            # if epoch % 1000 == 0: 
+            #     print(f"y_pred at epoch {epoch}: {y_pred}")
+            #     print(f"loss at epoch {epoch}: {loss}")
 
             # Backward pass and optimization
 
@@ -49,5 +49,3 @@ class RegressionNN(nn.Module):
         #with torch.no_grad():
         y_pred = self(X_test)#.forward(X_test)
         return y_pred.detach().numpy()
-
-

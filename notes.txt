@@ -2,3 +2,46 @@
 80143.49738241316
 78191.0310787507
 80189.30649744575
+
+7 Jan 1101a [np.float64(39512.2645367826), np.float64(33709.17869040749), np.float64(43697.213420351734), np.float64(41537.93498543931), np.float64(76410.7766354256)]
+    1105a [np.float64(39512.2645367826), np.float64(32611.1980288134), np.float64(42561.72225282717), np.float64(41537.93498543931), np.float64(72520.16697860244)]
+    1116a [np.float64(39512.2645367826), np.float64(33162.85004809585), np.float64(43065.202393669926), np.float64(41537.93498543931), np.float64(92189.96830007389)]
+    1126a changed GarageYrBlt to 0 for missing values, took the min number of columns of the splits 
+        [np.float64(64540.23803393773), np.float64(29677.8376885895), np.float64(32310.66644134703), np.float64(23012.152364292146), np.float64(64088.3658941643)]
+    1134a added MCA with 90% explained variance    
+        [np.float64(33492.98250274717), np.float64(33042.17053660006), np.float64(40465.60647274703), np.float64(32499.215148154643), np.float64(66864.12566355291)]
+    1138a MCA with 80% explained variance
+        [np.float64(40733.91191827902), np.float64(27814.597771436944), np.float64(30000.72769890576), np.float64(27154.973844232638), np.float64(60285.443377953015)]
+    1144a changed simple imputer to iterative imputer with Bayesian ridge  
+        [np.float64(63472.22228521445), np.float64(30443.357613489618), np.float64(33674.499462377025), np.float64(29494.565298526268), np.float64(55948.598431730126)]  
+    1149a changed back to simple imputer, added robust scaler
+        [np.float64(76522.50786896062), np.float64(31081.53676603471), np.float64(35721.959672409525), np.float64(27508.793996067085), np.float64(197601.13484840552)]
+    1153a removed robust scaler
+        [np.float64(96952.38414904963), np.float64(36369.820130156375), np.float64(36458.53358771097), np.float64(33977.97656094031), np.float64(64239.51328364259)]
+    1156a no change
+        [np.float64(96952.38414904963), np.float64(35864.49193172427), np.float64(36759.850078366224), np.float64(33977.97656094031), np.float64(64040.94019762775)]     
+    1202p changed simple imputer to iterative imputer with Bayesian ridge and default max_iter  
+        [np.float64(50675.17087469327), np.float64(39825.50951930907), np.float64(43591.92131332344), np.float64(33882.03879886335), np.float64(70367.46160782294)]
+    1206p changed back to simple imputer
+        [np.float64(61781.403954443165), np.float64(32910.878035228285), np.float64(35175.84657174756), np.float64(31176.07511273098), np.float64(64882.286127602005)] 
+    1210p rs = 393 (from best performance so far)
+        [np.float64(40733.91191827722), np.float64(27717.958740411275), np.float64(30475.54649340554), np.float64(27154.973844232638), np.float64(60073.6830974219)]
+    1213p new random seed
+        [np.float64(41501.7488424713), np.float64(28413.497491540387), np.float64(36196.86346417649), np.float64(30055.573098122357), np.float64(61772.86960095721)]
+    1217p added minmaxscaler, changed cv in the baseline to 2 
+        [np.float64(81694.60337673145), np.float64(30651.21591945696), np.float64(34708.22049133697), np.float64(26900.853634446183), np.float64(198548.2978671461)]
+    1219p no change (except for rs)                   
+        [np.float64(88979.26426219686), np.float64(36667.88116409031), np.float64(44233.46073841962), np.float64(37936.844123487375), np.float64(206113.2764673704)]
+    1222p replaced minmaxscaler with standardscaler    
+        [np.float64(77347.40980170395), np.float64(29130.24457686913), np.float64(32941.53648315658), np.float64(32602.720063124347), np.float64(192894.24001182124)]
+    1225p removed all scalers    
+        [np.float64(51030.28368029447), np.float64(33562.09616141178), np.float64(38179.04692039182), np.float64(38624.01806874477), np.float64(65020.80242095278)]
+    1228p added in correlated features imputing    
+        [np.float64(50073.97319819305), np.float64(30008.368949646447), np.float64(33651.44215428094), np.float64(31761.86187422854), np.float64(63641.41064621696)]
+    1239p ordinal features, moved all ordinal features to mode pipeline   
+        [np.float64(41028.24651032714), np.float64(33368.43656932738), np.float64(39103.632716917826), np.float64(27022.83299140565), np.float64(66806.93274909645)]
+    1241p no change (except rs)     
+        [np.float64(105825.97094285801), np.float64(32546.6719650301), np.float64(37822.273874770646), np.float64(32666.369140349016), np.float64(58247.24573459009)]
+    1249p KNNImputer for all mode features    
+        [np.float64(106126.20625623435), np.float64(30189.794308762106), np.float64(37055.46549421254), np.float64(29720.022678538302), np.float64(58320.916480139866)]
+        
